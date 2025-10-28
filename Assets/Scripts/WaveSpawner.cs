@@ -186,7 +186,7 @@ public class WaveSpawner : MonoBehaviour
         // stop any pending spawns
         StopAllCoroutines();
 
-        // clear runtime state
+        // reset every thing
         currentWave = 0;
         enemiesToSpawn = 0;
         enemiesSpawned = 0;
@@ -202,7 +202,7 @@ public class WaveSpawner : MonoBehaviour
         if (ShopUI.Instance != null && ShopUI.Instance.IsOpen)
             ShopUI.Instance.ContinueGame();
 
-        // kill any leftover enemies from the previous run (tag your enemy prefab as "Enemy")
+        // kill any leftover enemies from the previous run
         var leftovers = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (var e in leftovers)
         {
