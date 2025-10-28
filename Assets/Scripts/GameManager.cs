@@ -92,6 +92,13 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         isRetrying = true;
+        // reset 
+        ScoreManager.Instance?.ResetRunTotals(true);
+
+        // reset spawner and start from wave 1
+        var spawner = FindObjectOfType<WaveSpawner>();
+        if (spawner) spawner.ResetForNewRun(startImmediately: true);
+        
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

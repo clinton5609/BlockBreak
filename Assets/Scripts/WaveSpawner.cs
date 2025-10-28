@@ -38,12 +38,6 @@ public class WaveSpawner : MonoBehaviour
         enemiesAlive = Mathf.Max(0, enemiesAlive - 1);
     }
 
-    void Start()
-    {   
-        // start wave immediately
-        PrepareNextWave();
-    }
-
     void Update()
     {
         switch (state)
