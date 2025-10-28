@@ -213,6 +213,13 @@ public class WaveSpawner : MonoBehaviour
                 Destroy(e);
             }
         }
+
+        // also kill any leftover coins from the previous run
+        var coins = GameObject.FindGameObjectsWithTag("Coin");
+        foreach (var c in coins)
+        {
+            Destroy(c);
+        }
         // optionally start wave 1 immediately
         if (startImmediately)
             PrepareNextWave();

@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
         // reset spawner and start from wave 1
         var spawner = FindObjectOfType<WaveSpawner>();
-        if (spawner) spawner.ResetForNewRun(startImmediately: false);
+        if (spawner) spawner.ResetForNewRun(startImmediately: true);
 
         // check if the player reference or player object is null 
         if (player == null || player.Equals(null))
