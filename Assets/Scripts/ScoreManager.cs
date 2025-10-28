@@ -112,7 +112,7 @@ public class ScoreManager : MonoBehaviour
             highScoreText.text = "Highest Score: " + highScore.ToString();
         }
     }
-    
+
     // allows for resetting high score in inspector
     void OnDrawGizmos()
     {
@@ -123,6 +123,14 @@ public class ScoreManager : MonoBehaviour
             highScore = 0;
             UpdateUI();
         }
+    }
+    
+    public void ResetRunTotals(bool resetCoinsToo = true)
+    {
+        score = 0;
+        gameOverScore = 0;
+        if (resetCoinsToo) coins = 0;
+        UpdateUI();
     }
     
 

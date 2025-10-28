@@ -48,7 +48,7 @@ MonoBehaviour:
   startCount: 3
   addPerWave: 2
   timeBetweenSpawns: 0.5
-  timeBetweenWaves: 5
+  timeBetweenWaves: 3
   mapMin: {x: -8, y: -3}
   mapMax: {x: 9, y: 8}
   enableShopBreaks: 1

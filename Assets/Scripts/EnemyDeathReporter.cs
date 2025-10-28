@@ -9,6 +9,11 @@ public class EnemyDeathReporter : MonoBehaviour
     private WaveSpawner owner;
     [SerializeField] private int points = 100; // gain points for killing an emey
     private bool notified = false;
+    private bool reportingEnabled = true;
+    public void DisableReporting()
+    {
+        reportingEnabled = false;
+    }
     // called in spawner to take ownership of this enemy after it is instantiated
     public void SetOwner(WaveSpawner spawner)
     {
@@ -17,7 +22,7 @@ public class EnemyDeathReporter : MonoBehaviour
 
     private void NotifyOnce()
     {
-        if (notified)
+        if (notified || !reportingEnabled)
         {
             return;
         }

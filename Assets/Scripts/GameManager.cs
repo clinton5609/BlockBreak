@@ -43,6 +43,12 @@ public class GameManager : MonoBehaviour
         // unpause the game 
         Time.timeScale = 1f;
 
+        ScoreManager.Instance?.ResetRunTotals(true);
+
+        // reset spawner and start from wave 1
+        var spawner = FindObjectOfType<WaveSpawner>();
+        if (spawner) spawner.ResetForNewRun(startImmediately: false);
+
         // check if the player reference or player object is null 
         if (player == null || player.Equals(null))
         {
@@ -63,7 +69,6 @@ public class GameManager : MonoBehaviour
             var camFollow = Camera.main ? Camera.main.GetComponent<CameraFollow>() : null;
             if (camFollow) camFollow.SetTarget(go.transform);
         }
-
     }
     // player health reached 0
     public void GameOver()

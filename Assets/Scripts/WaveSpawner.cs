@@ -175,10 +175,48 @@ public class WaveSpawner : MonoBehaviour
     public void UpdateWaveText()
     {
         // for wave ui text during gameplay
-        if(waveText != null)
+        if (waveText != null)
         {
             waveText.text = "Wave: " + currentWave;
         }
     }
+    
+    public void ResetForNewRun(bool startImmediately = true)
+    {
+        // stop any pending spawns
+        StopAllCoroutines();
+
+        // clear runtime state
+        currentWave = 0;
+        enemiesToSpawn = 0;
+        enemiesSpawned = 0;
+        enemiesAlive = 0;
+        spawnTimer = 0f;
+        betweenWaveTimer = 0f;
+        state = SpawnerState.BetweenWaves;
+
+        // update UI
+        UpdateWaveText();
+
+        // close shop if it happened to be left open
+        if (ShopUI.Instance != null && ShopUI.Instance.IsOpen)
+            ShopUI.Instance.ContinueGame();
+
+        // kill any leftover enemies from the previous run (tag your enemy prefab as "Enemy")
+        var leftovers = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var e in leftovers)
+        {
+            var rep = e.GetComponent<EnemyDeathReporter>();
+            if (rep)
+            {
+                rep.DisableReporting();
+                Destroy(e);
+            }
+        }
+        // optionally start wave 1 immediately
+        if (startImmediately)
+            PrepareNextWave();
+    }
+
 }
 
