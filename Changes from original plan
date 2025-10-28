@@ -1,1 +1,9 @@
+Changes made from the original plan:
+Did not implement a dashing feature and so, placing blocks uses space button instead of right click.
+Blocks are infinite, not obtained from drops but players are instead limited to only being field 3 blocks at once.
+Also, enemies do not get buffed the longer the game goes on, instead, I opted to increase their numbers the more waves the player clears. 
 
+As for the art assets, I ended up using free assets from a website. I used one tileset for the tile map, player and enemies . I grabbed the coin art from google.
+This allowed me to actually create a map with fixed objects that the player can play around.
+
+The audio assets were similar. I found free sound assets I could use from the web. There ended up not being any background music because the rubric said so. 
