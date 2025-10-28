@@ -1,5 +1,5 @@
 # BlockBreak
-Blockbreak is a 2d top down survival shooter game. The main goal of the wave is to survive for as long as possible and beat your highest score. 
+Blockbreak is a 2d top down survival shooter game. The main goal of the game is to survive for as long as possible and beat your highest score. 
 The player will experience waves of enemies which will be interrupted every 3 waves to have a chance at upgrades. Enemies will drop coins upon
 death that the player can spend in the shop, every 3 waves. Each wave will increase the amount of enemies that the player must face, making survival
 harder the longer the player survives. The difficulty can be alleviated by upgrading stats in the shop. To aid in survival, the player can place blocks.
